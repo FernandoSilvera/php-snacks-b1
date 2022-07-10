@@ -4,7 +4,7 @@
 
 $name = key_exists("name", $_GET) ? $_GET["name"] : "";
 $email = key_exists("email", $_GET) ? $_GET["email"] : "";
-$age = key_exists("age", $_GET) ? $_GET["age"] : "";
+$age = key_exists("age", $_GET) ? $_GET["age"] : 0;
 $validEmail = false;
 $validData = false;
 
@@ -51,8 +51,10 @@ if (!is_nan($age) && strlen($name) >= 4 && $validEmail) {
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
 
-        <?php 
+      <div>
+      <?php 
         if ($validData) { ?>
           
           <div class="alert alert-success mt-4" role="alert">
@@ -66,7 +68,7 @@ if (!is_nan($age) && strlen($name) >= 4 && $validEmail) {
           </div>
 
         <?php } ?>
-      </form>
+      </div>
     </div>
   </main>
 </body>
